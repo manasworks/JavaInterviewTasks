@@ -5,6 +5,11 @@ public class Array_FindMinimum {
 
         int[] arr = {0,5,6,9,7,2,-5,2,2,-99,22,0};
 
+        System.out.println(findMin(arr));
+
+    }
+
+    public static int findMin(int[] arr){
         // To find minimum number from an Array. Firstly we need a new Variable to store our Min
         // Than we will just check each number if it's smaller than our Min by using For Each Loop
         // And if its smaller than we will just reassign our Min with current Each / number
@@ -16,8 +21,7 @@ public class Array_FindMinimum {
                 min=each; // If yes than i reassigning my Min with current number
             }
         }
-
-        System.out.println(min);
+        return min;
     }
 }
 // Write a function that can find the minimum number from an int Array
