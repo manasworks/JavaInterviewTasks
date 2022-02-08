@@ -14,7 +14,6 @@ public class Array_MoveAllZerosToTheEnd {
             }
         }
         return rev;
-
     }
 
     public static void main(String[] args) {
