@@ -5,6 +5,10 @@ public class Array_FindMaximum {
 
         int[] arr = {0,5,6,9,7,2,-5,2,2-99,22,0};
 
+        System.out.println(findMax(arr));
+    }
+
+    public static int findMax(int[] arr){
         // To find maximum from an array firstly we need one extra Variable to store the max number
         // Than we will just run For Each Loop to check each element if it's bigger than our max value.
         // And if it's Bigger than we will just reassign our Max with current each value.
@@ -16,8 +20,7 @@ public class Array_FindMaximum {
                 max = each; // If yes assigning new number as Max
             }
         }
-
-        System.out.println(max);
+        return max;
     }
 }
 //Write a function that can find the maximum number from an int Array
