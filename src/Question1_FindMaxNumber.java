@@ -1,9 +1,12 @@
+import java.util.Arrays;
+
 public class Question1_FindMaxNumber {
     public static void main(String[] args) {
 
         int[] arr = {0,5,6,9,7,2,-5,2,2-99,22,0};
-
+        System.out.println(Arrays.toString(arr));
         System.out.println("The max number is: "+findMax(arr));
+
     }
 
     public static int findMax(int[] arr){
