@@ -1,3 +1,5 @@
+package array;
+
 public class Array_RemoveDuplicates {
 
     public static void main(String[] args) {

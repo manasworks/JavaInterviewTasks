@@ -1,3 +1,5 @@
+package array;
+
 public class Array_MergeTwoArrays {
 
     public static void main(String[] args) {

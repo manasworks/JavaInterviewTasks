@@ -1,3 +1,5 @@
+package array;
+
 public class Array_FindMaximum {
     public static void main(String[] args) {
 
