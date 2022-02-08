@@ -1,6 +1,6 @@
 1	Write a function that can find the maximum number from an int Array
 
-2	Write a function that can find the maximum number from an int Array
+2	Write a function that can find the minimum number from an int Array
 
 3	write a program that can find the first duplicated element from the array
 
