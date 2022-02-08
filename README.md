@@ -1,4 +1,4 @@
-# JavaInterviewTasks
+# Java Interview Tasks
 
 1. Please work under your Branch Only. And push also to your Branch.
 2. Please updated your progress status on Google Docs for accountability 
