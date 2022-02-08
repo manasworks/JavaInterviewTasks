@@ -1,4 +1,4 @@
-public class Q5_MoveAllZeroesInArray {
+public class Array_MoveAllZerosToTheEnd {
 
     public static void main(String[] args) {
 

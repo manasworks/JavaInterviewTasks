@@ -1,4 +1,4 @@
-public class Q4_MethodToConcat2Arrays {
+public class Array_MergeTwoArrays {
 
     public static void main(String[] args) {
 

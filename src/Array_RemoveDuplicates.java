@@ -1,4 +1,4 @@
-public class Q7_RemoveDuplicatesFromIntArray {
+public class Array_RemoveDuplicates {
 
     public static void main(String[] args) {
 
