@@ -9,7 +9,7 @@ public class Array_Permutation {
     public static void main(String[] args) {
 
         char[] arr = {'A', 'B', 'C'};
-        giveAllCombinations(arr);
+        //giveAllCombinations(arr);
         permutation(arr);
 
     }
@@ -29,24 +29,30 @@ public class Array_Permutation {
                 if(each==sub) continue;
                 for (char last : arr) {
                     if(sub==last || each==last) continue;
-                    System.out.println("["+each+", "+sub+", "+last+"]");
+                    System.out.println(each+", "+sub+", "+last);
                 }
             }
         }
     }
 
     public static void permutation(char[] arr){
-        // 2 = 1*2
-        // 3 = 1*2*3
-        // 4 = 1*2*3*4
-        // Elements and permutations possibilities. So basically we need factorial of number of elements
+        // Second approach when flexible for any length of array, first loop is swapping first and second values
+        // to run all possible variants and inner is shifting indexes from 1 till end.
 
-        int factorial = 1;
-        for (int i = 1; i <= arr.length; i++) {
-            factorial=factorial*i;
+        for (int i = 0; i < arr.length; i++) {
+
+            //Swap chars
+            char temp = arr[0];
+            arr[0] = arr[1];
+            arr[1] = temp;
+
+            for (int j = 1; j < arr.length; j++) {
+                char subTemp = arr[1];
+                arr[1] = arr[j];
+                arr[j] = subTemp;
+                System.out.println(Arrays.toString(arr));
+            }
         }
-        System.out.println(factorial);
-
     }
 
 }
