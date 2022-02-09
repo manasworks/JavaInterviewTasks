@@ -1,5 +1,6 @@
 package array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Array_RemoveDuplicates {
@@ -10,6 +11,7 @@ public class Array_RemoveDuplicates {
 
         System.out.println( Arrays.toString( removeDuplicates(arr) ) );
         System.out.println( Arrays.toString( removeDuplicates2(arr) ) );
+        System.out.println( Arrays.toString( removeDuplicates3(arr) ) );
 
     }
 
@@ -67,6 +69,18 @@ public class Array_RemoveDuplicates {
             result[i] = Integer.parseInt(temp2[i]);
         }
 
+        return result;
+    }
+
+    public static int[] removeDuplicates3(int[] arr){
+        // With Array list
+        ArrayList <Integer> list = new ArrayList<>();
+        for (int i = 0; i < arr.length-1; i++) {
+            if (arr[i]!=arr[i+1]) list.add(arr[i]);
+        }
+        list.add(arr[arr.length-1]);
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) result[i] = list.get(i);
         return result;
     }
 }
