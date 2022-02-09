@@ -10,6 +10,7 @@ public class Array_Permutation {
 
         char[] arr = {'A', 'B', 'C'};
         giveAllCombinations(arr);
+        permutation(arr);
 
     }
 
@@ -32,6 +33,20 @@ public class Array_Permutation {
                 }
             }
         }
+    }
+
+    public static void permutation(char[] arr){
+        // 2 = 1*2
+        // 3 = 1*2*3
+        // 4 = 1*2*3*4
+        // Elements and permutations possibilities. So basically we need factorial of number of elements
+
+        int factorial = 1;
+        for (int i = 1; i <= arr.length; i++) {
+            factorial=factorial*i;
+        }
+        System.out.println(factorial);
+
     }
 
 }
