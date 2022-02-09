@@ -19,6 +19,8 @@ public class Array_Permutation {
         depends on the number of values in array, or we can say the length of array. In our case we have 3 characters
         that's why we will need 3 nested loops. And to avoid value duplicated and hold permutation we will check if in
         sub nest value is not equal to upper
+
+        Note: This is kind a hard code solution. Will work only if there is 3 elements...
          */
 
         for (char each : arr) {
