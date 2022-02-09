@@ -9,6 +9,7 @@ public class Array_RemoveDuplicates {
         int[] arr = {1, 2, 2, 3, 4, 4, 4, 5, 5,6,6,9,9,100};
 
         System.out.println( Arrays.toString( removeDuplicates(arr) ) );
+        System.out.println( Arrays.toString( removeDuplicates2(arr) ) );
 
     }
 
@@ -44,6 +45,27 @@ public class Array_RemoveDuplicates {
         }
 
         result[index] = arr[arr.length-1]; // Adding last element from original array. Because my loops did not include it
+
+        return result;
+    }
+
+    public static int[] removeDuplicates2(int[] arr){
+        // Second approach using string
+
+        String temp="";
+
+        for (int i = 0; i < arr.length-1; i++) {
+            if (arr[i]!=arr[i+1]){
+                temp+=arr[i]+",";
+            }
+        }
+        temp+=arr[arr.length-1];
+        String[] temp2 = temp.split(",");
+        int[] result = new int[temp2.length];
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = Integer.parseInt(temp2[i]);
+        }
 
         return result;
     }
