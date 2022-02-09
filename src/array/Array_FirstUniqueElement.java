@@ -1,5 +1,8 @@
 package array;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Array_FirstUniqueElement {
     public static void main(String[] args) {
 
