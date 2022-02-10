@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Array_SumUpTo0 {
     public static void main(String[] args) {
 
-        int num = 33;
+        int num = 4;
 
         System.out.println(Arrays.toString(generator(num)));
     }
