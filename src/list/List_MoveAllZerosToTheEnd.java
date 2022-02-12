@@ -19,7 +19,10 @@ public class List_MoveAllZerosToTheEnd {
     }
 
     public static ArrayList<Integer> moveToEnd(ArrayList<Integer> list, int numToMove){
-
+        /*
+        To remove given number like 0 from array list we can just run the loop.
+        Remove the number and add it back. That wat our zero will appear at the end.
+         */
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i)==numToMove){
                 list.remove(i);
