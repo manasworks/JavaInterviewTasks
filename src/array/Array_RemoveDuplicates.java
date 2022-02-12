@@ -8,20 +8,25 @@ public class Array_RemoveDuplicates {
 
         int[] arr = {1, 2, 2, 3, 4, 4, 4, 5, 5};
 
-        int newArr []= new int [arr.length];
         int j=0;
-        int count=0;
+        int count=1;
 
         for (int i = 0; i < arr.length-1; i++) {
             if(arr[i]!=arr[i+1]){
                 count++;
-                newArr[j++]=arr[i];
             }
         }
-        newArr[j++]=arr[arr.length-1];
-
-
+        int newArr []= new int [count];
+        for (int i = 0; i < arr.length-1; i++) {
+           if(arr[i]!=arr[i+1])
+            newArr[j++]=arr[i];
+        }
         System.out.println(Arrays.toString(newArr));
+
+
+
+
+
 
 
 
