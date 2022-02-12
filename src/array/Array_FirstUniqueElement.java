@@ -12,7 +12,7 @@ public class Array_FirstUniqueElement {
                 }
             }
             if(count==1){//if frequency of elements is one, then the element is unique
-                System.out.print(each+" ");
+                System.out.println(each+" ");
                 break;//using break executing, because we need only first unique element
             }
         }
