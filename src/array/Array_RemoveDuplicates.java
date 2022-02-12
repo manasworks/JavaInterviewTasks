@@ -21,6 +21,7 @@ public class Array_RemoveDuplicates {
            if(arr[i]!=arr[i+1])
             newArr[j++]=arr[i];
         }
+        newArr[j]= arr.length-1;
         System.out.println(Arrays.toString(newArr));
 
 
