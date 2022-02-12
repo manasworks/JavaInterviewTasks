@@ -5,10 +5,13 @@ import java.util.Arrays;
 public class Array_RemoveDuplicates {
 
     public static void main(String[] args) {
-        System.out.println("removeDublicate2() = " + removeDublicate2());
+        int[] arr = {1, 2, 2, 3, 4, 4, 4, 5, 5};
+        removeDuplicate2(arr);
+        System.out.println(Arrays.toString(removeDuplicate(arr)));
+
     }
 
-    public static int[] removeDublicate(int[] arr) {
+    public static int[] removeDuplicate(int[] arr) {
         //int[] arr = {1, 2, 2, 3, 4, 4, 4, 5, 5};
 
         int j = 0;
@@ -28,10 +31,10 @@ public class Array_RemoveDuplicates {
         return newArr;
     }
 
-    public static int []removeDublicate2() {
-        int[] arr = {1, 2, 2, 3, 4, 4, 4, 5, 5};
+    public static void removeDuplicate2(int []arr) {
 
-        int newArr[] = new int[arr.length];
+
+        int[] newArr = new int[arr.length];
         int j = 0;
 
         for (int i = 0; i < arr.length - 1; i++) {
@@ -42,9 +45,9 @@ public class Array_RemoveDuplicates {
         newArr[j++] = arr[arr.length - 1];
 
         for (int k = 0; k < j; k++) {
-             newArr[k]=newArr[j];
+            System.out.print(newArr[k]+" ");
         }
-       //return Arrays.toString(newArr);
+
 
     }
 
