@@ -1,5 +1,7 @@
 package array;
 
+import java.util.Arrays;
+
 public class Array_SumOfLeftEqualToRight {
     public static void main(String[] args) {
 
@@ -34,6 +36,9 @@ public class Array_SumOfLeftEqualToRight {
         }
         return "No such element";  // Loop finishes with no equal parts
     }
+
+
+
 }
 //    Given an array of integers, write a function to return the item in the array,
 //    where the sum of all items on its left is equal to the sum of the ones on the right.
