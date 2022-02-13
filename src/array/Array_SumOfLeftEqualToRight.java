@@ -19,7 +19,7 @@ public class Array_SumOfLeftEqualToRight {
         for (int k = arr.length - 1; k >arr.length/2; k--) {//second loop, counting up from the end of length to half of arr
                 countRight += arr[k];
             }
-            if (countLeft == countRight) {//if sum of right side equal to left side 
+            if (countLeft == countRight) {//if sum of right side equal to left side
                 equalResult = true;
             } else {
                 equalResult = false;
