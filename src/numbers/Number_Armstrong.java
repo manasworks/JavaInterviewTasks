@@ -9,7 +9,7 @@ package numbers;
 public class Number_Armstrong {
     public static void main(String[] args) {
         // Armstrong numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634, 8208, 9474, 54748
-        int num=8208;
+        int num=9;
 
         System.out.println( isArmstrong(num));
         System.out.println( isArmstrong2(num));
@@ -37,8 +37,13 @@ public class Number_Armstrong {
         }
         copyNum=num;
         for (int i = 0; i < digits; i++) {
+            int current=1;
             int currentNum = copyNum % 10;
-            result += Math.pow(currentNum, digits);
+            for (int j = 0; j < digits; j++) {
+                current*=currentNum;
+            }
+            result += current;
+           // result += Math.pow(currentNum, digits);
             copyNum = copyNum / 10;
         }
         return num==result;
