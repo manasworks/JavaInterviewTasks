@@ -11,9 +11,9 @@ public class Number_Armstrong {
         // Armstrong numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634, 8208, 9474, 54748
         int num=9;
 
-        //System.out.println( isArmstrong(num));
-        //System.out.println( isArmstrong2(num));
-        isArmstrongPrint(400);
+        System.out.println( isArmstrong(num));
+        System.out.println( isArmstrong2(num));
+        isArmstrongPrint(500);
     }
     /*
     To find if number is Armstrong first we need to find how many digits we have. Then we need take each number from a
