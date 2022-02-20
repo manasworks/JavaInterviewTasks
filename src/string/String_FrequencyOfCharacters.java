@@ -30,10 +30,8 @@ public class String_FrequencyOfCharacters {
                     count++; // +1 to count
                 }
             }
-            if (result.contains(""+str.charAt(i))){ // If my result has already such a char
-                continue; // Yes skip
-            } else {  // If it doesn't have added to my result
-                result += ""+str.charAt(i)+count; // Adding to result
+            if (!result.contains(""+str.charAt(i))){ // If my result not containing such a char
+               result += ""+str.charAt(i)+count; // Adding to result
             }
         }
 
