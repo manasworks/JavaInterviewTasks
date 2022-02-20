@@ -7,9 +7,7 @@ sort the individual string and append them back together
  */
 package string;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class String_SortLettersAndNumbers {
     public static void main(String[] args) {
@@ -21,7 +19,6 @@ public class String_SortLettersAndNumbers {
     public static String sort(String str){
 
         String result="";
-        ArrayList<String> list = new ArrayList<>();
 
         for (int i = 0; i < str.length(); i++) {
 
@@ -30,26 +27,18 @@ public class String_SortLettersAndNumbers {
                 while (i<str.length() && Character.isLetter(str.charAt(i))){
                     temp+=str.charAt(i++);
                 }
-                list.add(temp);
+                char[] chars = temp.toCharArray();
+                Arrays.sort(chars);
+                result += new String(chars);
                 i--;
             } else {
                 while (i<str.length() && Character.isDigit(str.charAt(i))){
                     temp+=str.charAt(i++);
                 }
-                list.add(temp);
+                char[] chars = temp.toCharArray();
+                Arrays.sort(chars);
+                result += new String(chars);
                 i--;
-            }
-
-        }
-
-        for (String each : list) {
-            ArrayList <String> sorting = new ArrayList<>();
-            for (int i = 0; i < each.length(); i++) {
-                sorting.add(""+each.charAt(i));
-            }
-            Collections.sort(sorting);
-            for (String sub : sorting) {
-                result+=sub;
             }
         }
         return result;
