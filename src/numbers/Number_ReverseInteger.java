@@ -4,10 +4,10 @@ public class Number_ReverseInteger {
     public static void main(String[] args) {
 
         int num=1982;
-        System.out.println( reverNum(num) );
+        System.out.println( reverseNum(num) );
     }
 
-    public static int reverNum(int num){
+    public static int reverseNum(int num){
         int reversed=0;
 
         while (num>0){
