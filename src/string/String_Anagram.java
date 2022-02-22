@@ -14,7 +14,10 @@ public class String_Anagram {
 
         System.out.println(s1+" "+s2+" is anagram "+isAnagram(s1, s2));
     }
-
+/*
+If string has same amount and type chars than we can say that it's an Anagram. To check if string anagram
+we will convert our string to char array. sort it and then compare.
+ */
     public static boolean isAnagram(String s1, String s2){
         s1=s1.toLowerCase();
         s2=s2.toLowerCase();
