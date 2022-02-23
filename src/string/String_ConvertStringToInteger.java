@@ -5,7 +5,7 @@ package string;
 
 public class String_ConvertStringToInteger {
     public static void main(String[] args) {
-        String str="asd10";
+        String str="509";
         System.out.println(stringToInt(str));
     }
 
