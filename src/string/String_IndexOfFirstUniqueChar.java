@@ -12,7 +12,6 @@ public class String_IndexOfFirstUniqueChar {
     }
 
     public static int indexOfFirstUnique(String s){
-        int index=-1;
 
         for (int i = 0; i < s.length(); i++) {
             int count=0;
@@ -24,6 +23,6 @@ public class String_IndexOfFirstUniqueChar {
             }
         }
 
-        return index;
+        return -1;
     }
 }
