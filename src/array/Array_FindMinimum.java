@@ -1,11 +1,14 @@
 package array;
 
+import java.util.Arrays;
+
 public class Array_FindMinimum {
     public static void main(String[] args) {
 
         int[] arr = {0,5,6,9,7,2,-5,2,2,-99,22,0};
 
         System.out.println(findMin(arr));
+        System.out.println(findMin2(arr));
 
     }
 
@@ -22,6 +25,14 @@ public class Array_FindMinimum {
             }
         }
         return min;
+    }
+
+    //Solving with sort method
+    public static int findMin2(int[] arr){
+
+        Arrays.sort(arr); // sorting the array
+        return arr[0]; // returning first element from array
+
     }
 }
 // Write a function that can find the minimum number from an int Array
