@@ -11,37 +11,27 @@ Output: "bb"
  */
 package string;
 
-import java.util.ArrayList;
-
 public class String_LongestPalindrome {
     public static void main(String[] args) {
-        String str="testmanassanamtest";
+        String str="babad";
         System.out.println("Longest palindrome from: \""+str+"\" is: \""+ longestPalindrome(str)+"\"" );
     }
 
     public static String longestPalindrome(String str){
         str = str+" ";
         String result="";
-        ArrayList <String> allPossibilities = new ArrayList<>();
         for (int i = 0; i < str.length()-1; i++) {
-            for (int j = i; j < str.length(); j++) {
+            for (int j = i+1; j < str.length(); j++) {
                 String current = str.substring(i, j);
-                if (!current.isEmpty() && !allPossibilities.contains(current)){
-                    allPossibilities.add( current );
+
+                if (current.length()>1 && current.equals( reverse(current))){
+                    if (current.length() > result.length()){
+                        result = current;
+                    }
                 }
             }
         }
 
-        for (String each : allPossibilities) {
-            if (each.equals( reverse(each))){
-                if (each.length() > result.length()){
-                    result = each;
-                }
-            }
-        }
-        if (result.length()==1) {
-            result = "No palindrome is present";
-        }
         return result;
     }
 
