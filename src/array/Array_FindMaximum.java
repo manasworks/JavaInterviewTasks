@@ -1,11 +1,14 @@
 package array;
 
+import java.util.Arrays;
+
 public class Array_FindMaximum {
     public static void main(String[] args) {
 
         int[] arr = {0,5,6,9,7,2,-5,2,2-99,22,0};
 
         System.out.println(findMax(arr));
+        System.out.println(findMax2(arr));
     }
 
     public static int findMax(int[] arr){
@@ -21,6 +24,14 @@ public class Array_FindMaximum {
             }
         }
         return max;
+    }
+
+    // By sort method
+    public static int findMax2(int[] arr){
+
+        Arrays.sort(arr); // Sorting the array by sort method
+        return arr[arr.length-1]; // returning the last element in sorted array
+
     }
 }
 //Write a function that can find the maximum number from an int Array
