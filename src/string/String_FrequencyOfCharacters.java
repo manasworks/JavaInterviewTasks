@@ -7,8 +7,7 @@ package string;
 public class String_FrequencyOfCharacters {
     public static void main(String[] args) {
 
-        String str="AAABBCDD";
-
+        String str="Apple";
         System.out.println( frequencyOfChars(str) );
     }
 
@@ -31,10 +30,10 @@ public class String_FrequencyOfCharacters {
                 }
             }
             if (!result.contains(""+str.charAt(i))){ // If my result not containing such a char
-               result += ""+str.charAt(i)+count; // Adding to result
+               result += ""+str.charAt(i)+"="+count+", "; // Adding to result
             }
         }
 
-        return result;
+        return result.substring(0, result.length()-2);
     }
 }
