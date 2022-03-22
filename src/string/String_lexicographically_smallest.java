@@ -20,7 +20,7 @@ import java.util.Arrays;
 public class String_lexicographically_smallest {
     public static void main(String[] args) {
 
-        System.out.println(lexicographicallySmallest(1, 1));
+        System.out.println(lexicographicallySmallest(7, 27));
 
     }
 
@@ -35,20 +35,17 @@ public class String_lexicographically_smallest {
 
         // Starting my nested loop from the last digit. Up to 26 max letter "z" filling it up till the sum is matched
         for (int i = arr.length-1; i >=0 ; i--) {
-            for (int j = 0; j <= 26 ; j++) {
+            for (int j = 1; j <= 26 ; j++) {
                 arr[i]=j;
                 int sumOfDigits=0;
                 for (int each : arr) sumOfDigits+=each;
                 if (sumOfDigits==sum) {
-                    break;
+                    // Converting my int array to string
+                    for (int each : arr) result += (char)(each+96);
+                    return result;
                 }
             }
         }
-
-        // Converting my int array to string
-        for (int each : arr) result += (char)(each+96);
-
-        return result;
+        return "Something went wrong";
     }
-
 }
