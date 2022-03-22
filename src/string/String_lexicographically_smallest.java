@@ -14,23 +14,26 @@ that is, either x is a prefix of y, or if i is the first position such that x[i]
  */
 package string;
 
+
 import java.util.Arrays;
 
 public class String_lexicographically_smallest {
     public static void main(String[] args) {
 
-        System.out.println(lexicographicallySmallest(9, 9));
+        System.out.println(lexicographicallySmallest(1, 1));
 
     }
 
     public static String lexicographicallySmallest(int length, int sum){
         String result="";
-        if (length>sum) return "Invalid input";
-        if (sum==1) return "a";
+        if (length>sum) return "Invalid input. Sum can not be smaller than length";
 
+        // Creating int array to store my numbers
         int[] arr = new int[length];
-        for (int i = 0; i < arr.length; i++) arr[i]=1;
+        // Populating my array with 1 ones.
+        Arrays.fill(arr, 1);
 
+        // Starting my nested loop from the last digit. Up to 26 max letter "z" filling it up till the sum is matched
         for (int i = arr.length-1; i >=0 ; i--) {
             for (int j = 0; j <= 26 ; j++) {
                 arr[i]=j;
@@ -42,10 +45,8 @@ public class String_lexicographically_smallest {
             }
         }
 
-        for (int each : arr) {
-            char c = (char)(each+96);
-            result += ""+c;
-        }
+        // Converting my int array to string
+        for (int each : arr) result += (char)(each+96);
 
         return result;
     }
