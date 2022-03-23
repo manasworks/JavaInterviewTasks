@@ -21,6 +21,7 @@ public class String_lexicographically_smallest {
     public static void main(String[] args) {
 
         System.out.println(lexicographicallySmallest(7, 26));
+        System.out.println(sultansSolution(7,26));
 
     }
 
@@ -47,5 +48,22 @@ public class String_lexicographically_smallest {
             }
         }
         return "Something went wrong";
+    }
+
+    static String sultansSolution(int n, int k){
+        String result = "";  //empty string where the result will be generated.
+
+        for (int i = 1; i <= n; i++) {      // loop for the length of the string. We are going from 1->n so that we can use the value of i in the equations below.
+            if ((26 <= (k - (n - i)))) {    //if k is more than 26 after assuming all the other letters of the string are 'a',
+                result = 'z' + result;      //add a 'z' to the front of whatever letters are already in the string
+                k -= 26;                    //subtract 26 from k for the 'z' we added in the above line.
+            } else {
+                int last = 122 - (26 - (k - (n - i)));//using the ascii table -->  'z' - 26-(k-(n-1)).  This assumes the rest of the letters can be a, and populates the highest letter count possible
+                result = (char)last + result;   //ascii value of character cast into char, add char from above to the front of the string.
+                k -= (last - 96);           //subtract value of character from k
+            }
+
+        }
+        return result;
     }
 }
