@@ -20,8 +20,8 @@ import java.util.Arrays;
 public class String_lexicographically_smallest {
     public static void main(String[] args) {
 
-        System.out.println(lexicographicallySmallest(7, 26));
-        System.out.println(sultansSolution(7,26));
+        System.out.println(lexicographicallySmallest(12, 12));
+        System.out.println(sultansSolution(12,12));
 
     }
 
