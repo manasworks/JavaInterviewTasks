@@ -20,12 +20,12 @@ import java.util.Arrays;
 public class String_lexicographically_smallest {
     public static void main(String[] args) {
 
-        System.out.println(lexicographicallySmallest(7, 27));
+        System.out.println(lexicographicallySmallest(7, 26));
 
     }
 
     public static String lexicographicallySmallest(int length, int sum){
-        String result="";
+        StringBuilder result= new StringBuilder();
         if (length>sum) return "Invalid input. Sum can not be smaller than length";
 
         // Creating int array to store my numbers
@@ -41,8 +41,8 @@ public class String_lexicographically_smallest {
                 for (int each : arr) sumOfDigits+=each;
                 if (sumOfDigits==sum) {
                     // Converting my int array to string
-                    for (int each : arr) result += (char)(each+96);
-                    return result;
+                    for (int each : arr) result.append((char) (each + 96));
+                    return result.toString();
                 }
             }
         }
