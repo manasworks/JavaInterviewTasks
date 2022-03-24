@@ -20,8 +20,9 @@ import java.util.Arrays;
 public class String_lexicographically_smallest {
     public static void main(String[] args) {
 
-        System.out.println(lexicographicallySmallest(12, 12));
-        System.out.println(sultansSolution(12,12));
+        System.out.println(lexicographicallySmallest(5, 73));
+        System.out.println(sultansSolution(5,73));
+        System.out.println(minValueOfString(5, 73));
 
     }
 
@@ -65,5 +66,19 @@ public class String_lexicographically_smallest {
 
         }
         return result;
+    }
+
+    public static  char[] minValueOfString(int n, int k){
+        char [] numValue = new char[n];
+        for (int i = 0; i < n; i++) {
+            numValue[i] = 'a'; //[a,a,a,a,a,a,a,]
+            k--;
+        }
+        while (k> 0){
+            int number = Math.min(25,k);/// [z,z,z,z,z]
+            numValue[--n] += number;
+            k -= number;
+        }
+        return numValue;
     }
 }
