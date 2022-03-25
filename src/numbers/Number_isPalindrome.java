@@ -7,7 +7,7 @@ package numbers;
 
 public class Number_isPalindrome {
     public static void main(String[] args) {
-        int num=2132;
+        int num=1221;
 
         System.out.println("isPalindrome("+num+") = " + isPalindrome(num));
         System.out.println("isPalindrome2("+num+") = " + isPalindrome2(num));
@@ -26,8 +26,7 @@ public class Number_isPalindrome {
     static boolean isPalindrome2(int num){
         String given = ""+num;
         StringBuilder str = new StringBuilder(given);
-        str.reverse();
-        String reversed = str.toString();
+        String reversed = str.reverse().toString();
         return given.equals(reversed);
     }
 }

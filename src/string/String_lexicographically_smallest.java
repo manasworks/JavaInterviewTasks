@@ -70,12 +70,12 @@ public class String_lexicographically_smallest {
 
     public static  char[] minValueOfString(int n, int k){
         char [] numValue = new char[n];
-        for (int i = 0; i < n; i++) {
-            numValue[i] = 'a'; //[a,a,a,a,a,a,a,]
-            k--;
-        }
-        while (k> 0){
-            int number = Math.min(25,k);/// [z,z,z,z,z]
+        Arrays.fill(numValue, 'a');
+        k-=n;
+        int number = k;
+        while (k>0){
+            if (k>25) number = 25;
+            else number=k;
             numValue[--n] += number;
             k -= number;
         }
