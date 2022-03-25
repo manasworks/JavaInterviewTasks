@@ -6,8 +6,8 @@ package numbers;
 
 public class Number_DivideWithoutDivision {
     public static void main(String[] args) {
-        int a=15;
-        int b=2;
+        int a=7;
+        int b=3;
 
         System.out.println("divide("+a+"/"+b+") = " + divide(a, b));
 

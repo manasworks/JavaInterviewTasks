@@ -29,9 +29,9 @@ public class Number_Fibonacci {
     }
 
     public static void fibonacci(int num){
-        int sum=0, prevNum=0, nextNum=1;
-        for (int i = 0; i <= num; i++) {
-            System.out.print(prevNum+" ");
+        int sum=0, prevNum=1, nextNum=1;
+        for (int i = 0; i < num; i++) {
+            System.out.print(prevNum+", ");
             sum=prevNum+nextNum;
             prevNum=nextNum;
             nextNum=sum;
@@ -43,12 +43,12 @@ public class Number_Fibonacci {
         // Declare an array to store
         // Fibonacci numbers.
         // 1 extra to handle case, n = 0
-        int[] fibArray = new int[num+1];
+        int[] fibArray = new int[num];
 
-        fibArray[0]=0;
+        fibArray[0]=1;
         fibArray[1]=1;
 
-        for (int i = 2; i <=num ; i++) {
+        for (int i = 2; i <num ; i++) {
             fibArray[i] = fibArray[i-1]+fibArray[i-2];
         }
 
