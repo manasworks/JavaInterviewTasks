@@ -7,13 +7,16 @@ import java.util.Map;
 
 public class Map_FrequencyOfCharacters {
     public static void main(String[] args) {
-        String str = "aaaafffeeesddfdllxlcklklcv";
+        String str = "aAabdivctlroROfjvalkj1291dD";
 
         String[] arr = str.split("");
         Map<String, Integer> map = new HashMap<>();
 
         for (String each : arr) {
-            map.put(each, Collections.frequency(Arrays.asList(arr), each));
+            int freq = Collections.frequency(Arrays.asList(arr), each);
+            if (freq>1){
+                map.put(each, freq);
+            }
         }
 
         System.out.println(map);
