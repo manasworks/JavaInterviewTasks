@@ -14,9 +14,7 @@ public class Map_FrequencyOfCharacters {
 
         for (String each : arr) {
             int freq = Collections.frequency(Arrays.asList(arr), each);
-            if (freq>1){
-                map.put(each, freq);
-            }
+            map.put(each, freq);
         }
 
         System.out.println(map);
