@@ -8,7 +8,7 @@ public class MostCommonWordSequences {
     public static void main(String[] args) throws IOException {
 
         StringBuilder sb;
-        BufferedReader br = new BufferedReader(new FileReader("D:\\Test.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("D:\\Book.txt"));
         try {
             sb = new StringBuilder();
             String line = br.readLine();
@@ -21,7 +21,7 @@ public class MostCommonWordSequences {
             br.close();
         }
 
-        System.out.println("commonThreeWords(sb) = " + commonThreeWords(sb));
+
     }
 
     static Map commonThreeWords(StringBuilder str){
