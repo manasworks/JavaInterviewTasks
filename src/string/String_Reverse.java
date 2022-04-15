@@ -13,13 +13,13 @@ public class String_Reverse {
         }
         System.out.println("Map = "+map);
 
-        String result="";
+        StringBuilder result= new StringBuilder();
         for (String s : array) {
             int count=0;
             for (String e : array) {
                 if (s.equals(e)) count++;
             }
-            if(!result.contains(s)) result+=s+"="+count+" ";
+            if(!result.toString().contains(s)) result.append(s).append("=").append(count).append(" ");
         }
 
         System.out.println("result = " + result);
