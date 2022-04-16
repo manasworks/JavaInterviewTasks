@@ -21,6 +21,7 @@ public class MostCommonWordSequences {
             br.close();
         }
 
+        System.out.println(commonThreeWords(sb));
 
     }
 

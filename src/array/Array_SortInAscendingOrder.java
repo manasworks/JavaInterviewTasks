@@ -1,6 +1,6 @@
 package array;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Array_SortInAscendingOrder {
 
@@ -10,6 +10,28 @@ public class Array_SortInAscendingOrder {
 
         System.out.println(Arrays.toString( arr));
         System.out.println(Arrays.toString( sortAscending(arr)));
+
+
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(3,7,4,9,2,5,10));
+
+        // Option 1 - Collection ready methods
+        Collections.sort(list, Collections.reverseOrder());
+
+        // Option 2 - with Comparator
+        list.sort(Comparator.reverseOrder());
+
+        // Option 3 - Loops with shift smaller logic
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = list.size() - 1; j > i; j--) {
+                if (list.get(i) < list.get(j)) {
+                    int tmp = list.get(i);
+                    list.set(i,list.get(j)) ;
+                    list.set(j,tmp);
+                }
+            }
+        }
+
+        System.out.println(list);
 
     }
 
@@ -35,6 +57,9 @@ public class Array_SortInAscendingOrder {
         }
 
         return arr;
+
+
+
     }
 }
 // Write a method that can sort an int array in Ascending order without using the sort method
