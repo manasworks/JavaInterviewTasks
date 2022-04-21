@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class Array_Shift_Times {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5};
+        int[] arr = {1,2,3};
 
         //System.out.println(Arrays.toString(shiftArray(arr, 9)) );
-        System.out.println(Arrays.toString(shiftArray2(arr, 5)) );
+        System.out.println(Arrays.toString(shiftArray2(arr, 2)) );
 
     }
     static int[] shiftArray(int[] arr, int times){
