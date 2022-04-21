@@ -1,8 +1,9 @@
 package array;
 
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Array_Permutation {
 
@@ -10,7 +11,8 @@ public class Array_Permutation {
 
         char[] arr = {'A', 'B', 'C'};
         //giveAllCombinations(arr);
-        permutation(arr);
+        //permutation(arr);
+        //permute(arr);
 
     }
 
@@ -54,6 +56,11 @@ public class Array_Permutation {
             }
         }
     }
+
+
+
+
+
 
 }
 // Given an array of 3 characters print all permutation combinations from the given characters
