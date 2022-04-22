@@ -1,28 +1,28 @@
 package string;
 
-import java.util.*;
 
 public class String_Reverse {
     public static void main(String[] args) {
+        String str = "String_Reverse";
+        System.out.println(reverse1(str));
+        System.out.println(reverse2(str));
+    }
 
-        String[] array = {"Ram", "Sam", "Ram", "Sam", "Cam", "Tam"};
-        Map<String, Integer> map = new HashMap<>();
-        for (String each : array) {
-            int freq = Collections.frequency(Arrays.asList(array), each);
-            map.put(each, freq);
+    static String reverse1(String str){
+        char[] arr = str.toCharArray();
+        for (int i = 0; i < arr.length/2; i++) {
+            char temp=arr[i];
+            arr[i]=arr[arr.length-1-i];
+            arr[arr.length-1-i]=temp;
         }
-        System.out.println("Map = "+map);
+        return String.valueOf(arr);
+    }
 
-        StringBuilder result= new StringBuilder();
-        for (String s : array) {
-            int count=0;
-            for (String e : array) {
-                if (s.equals(e)) count++;
-            }
-            if(!result.toString().contains(s)) result.append(s).append("=").append(count).append(" ");
+    static String reverse2(String str){
+        StringBuilder result = new StringBuilder();
+        for (int i = str.length()-1; i >=0 ; i--) {
+            result.append(str.charAt(i));
         }
-
-        System.out.println("result = " + result);
-
+        return result.toString();
     }
 }
