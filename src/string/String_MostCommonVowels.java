@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class String_MostCommonVowels {
     public static void main(String[] args) {
-        String s = "e should be the common vowel in this sentence";
+        String s = "lexicon";
 
         System.out.println(solution(s));
     }
@@ -23,8 +23,13 @@ public class String_MostCommonVowels {
             if (freq>max) max=freq;
             map.put(each, freq);
         }
+        boolean singleRes=true;
         for (Map.Entry<String, Integer> e : map.entrySet()) {
-            if (e.getValue()==max) result.append(e.getKey()).append(" appears ").append(e.getValue()).append(" times\n");
+            if (e.getValue()==max) {
+                String newLine = (singleRes)?"":"\n";
+                result.append(newLine).append(e.getKey()).append(" appears ").append(e.getValue()).append(" times");
+                singleRes=false;
+            }
         }
         return result.toString();
 

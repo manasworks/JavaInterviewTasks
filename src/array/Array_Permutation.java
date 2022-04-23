@@ -9,9 +9,9 @@ public class Array_Permutation {
 
     public static void main(String[] args) {
 
-        char[] arr = {'A', 'B', 'C'};
+        char[] arr = {'A', 'B', 'C', 'D'};
         //giveAllCombinations(arr);
-        //permutation(arr);
+        permutation(arr);
         //permute(arr);
 
     }
@@ -43,17 +43,16 @@ public class Array_Permutation {
 
         for (int i = 0; i < arr.length; i++) {
 
-            //Swap chars
-            char temp = arr[0];
-            arr[0] = arr[1];
-            arr[1] = temp;
-
             for (int j = 1; j < arr.length; j++) {
                 char subTemp = arr[1];
                 arr[1] = arr[j];
                 arr[j] = subTemp;
                 System.out.println(Arrays.toString(arr));
             }
+            //Swap chars
+            char temp = arr[0];
+            arr[0] = arr[1];
+            arr[1] = temp;
         }
     }
 
