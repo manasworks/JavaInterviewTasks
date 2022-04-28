@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class Map_FrequencyOfCharacters {
     public static void main(String[] args) {
-        String str = "aAabdivctlroROfjvalkj1291dD";
+        String str = "conferencing";  //enterprise  //conferencing
 
         String[] arr = str.split("");
         Map<String, Integer> map = new HashMap<>();

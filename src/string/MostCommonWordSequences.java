@@ -42,4 +42,19 @@ public class MostCommonWordSequences {
                 : o2.getValue().compareTo(o1.getValue()));
         return list.stream().limit(100).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> b, LinkedHashMap::new));
     }
+
+    public List<String> removeRepededwords(List<String> list){
+
+        for (String each : list) {
+            String[] words = each.split(" ");
+            String res = "";
+            for (String word : words) {
+                int f = Collections.frequency(Arrays.asList(words), word);
+                if (f==1) res+=word;
+            }
+            each=res;
+        }
+
+        return list;
+    }
 }
