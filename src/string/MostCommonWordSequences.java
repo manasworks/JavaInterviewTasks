@@ -10,7 +10,9 @@ public class MostCommonWordSequences {
         List<String> bookList = new ArrayList<>();
 
         Scanner s =new Scanner(System.in);
+        System.out.println("==============================================================================");
         System.out.println("Enter books txt file path. Exp: C:/book.txt. To stop entering books type: DONE");
+        System.out.println("==============================================================================");
         String path="";
         int i=1;
         while (!path.equalsIgnoreCase("done")){
@@ -24,37 +26,49 @@ public class MostCommonWordSequences {
 
         System.out.println("bookList = " + bookList);
 
-        StringBuilder book = fileRead("D:/pg2009.txt");
-
-        System.out.println(commonThreeWords(book));
+        System.out.println(commonThree(bookList));
 
     }
 
-    static Map commonThreeWords(StringBuilder s) {
+    static List<String> commonThree(List<String> list) {
 
-        ArrayList<String> sequences = new ArrayList<>();
+        Map<String, Integer> map = new HashMap<>();
 
-        String inputString = s.toString();
 
-        String[] words = inputString.replaceAll("\\p{Punct}", "").toLowerCase().split("\\s+");
+        for (String each : list) {
 
-        for (int i = 2; i < words.length; i++) {
-            sequences.add(words[i - 2] + " " + words[i - 1] + " " + words[i]);
-        }
-        
-        Map<String, Long> map = new HashMap<>();
+            StringBuilder book = fileRead(each);
+            String inputString = book.toString();
 
-        for (String sequence : sequences) {
-            if (map.containsKey(sequence)) {
-                map.put(sequence, map.get(sequence)+1);
-            } else {
-                map.put(sequence, 1L);
+            String[] words = inputString.replaceAll("^[\\pL\\pN]+$", "").toLowerCase().split("\\s+"); //\p{Punct}
+
+            for (int i = 2; i < words.length; i++) {
+
+                if (map.containsKey(words[i - 2] + " " + words[i - 1] + " " + words[i])) {
+                    map.put(words[i - 2] + " " + words[i - 1] + " " + words[i], map.get(words[i - 2] + " " + words[i - 1] + " " + words[i])+1);
+                } else {
+                    map.put(words[i - 2] + " " + words[i - 1] + " " + words[i], 1);
+                }
+
             }
         }
 
-        List<Map.Entry<String, Long>> list = new LinkedList<>(map.entrySet());
-        list.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()) == 0 ? o2.getKey().compareTo(o1.getKey()) : o2.getValue().compareTo(o1.getValue()));
-        return list.stream().limit(100).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> b, LinkedHashMap::new));
+        LinkedHashMap<String, Integer> sorted = map.entrySet().stream()
+                        .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                        .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue,
+                        (e1, e2) -> null, LinkedHashMap::new));
+
+        List<String> result= new ArrayList<>();
+
+        int c=0;
+        for (Map.Entry<String, Integer> entry : sorted.entrySet()) {
+            c++;
+            result.add(entry.getValue()+" - "+entry.getKey());
+            if (c==100) break;
+        }
+        System.out.println(result.size());
+
+        return result;
     }
 
     static StringBuilder fileRead(String filePath) {
