@@ -4,57 +4,77 @@ import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
 public class MostCommonWordSequences {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        List<String> bookList = new ArrayList<>();
 
-        StringBuilder sb;
-        BufferedReader br = new BufferedReader(new FileReader("D:\\Book.txt"));
-        try {
-            sb = new StringBuilder();
-            String line = br.readLine();
-            while (line != null) {
-                sb.append(line);
-                sb.append(System.lineSeparator());
-                line = br.readLine();
+        Scanner s =new Scanner(System.in);
+        System.out.println("Enter books txt file path. Exp: C:/book.txt. To stop entering books type: DONE");
+        String path="";
+        int i=1;
+        while (!path.equalsIgnoreCase("done")){
+            System.out.print(i++ + " Book path: ");
+            path = s.next();
+            if (!path.equalsIgnoreCase("done")){
+                bookList.add(path);
             }
-        } finally {
-            br.close();
         }
+        s.close();
 
-        System.out.println(commonThreeWords(sb));
+        System.out.println("bookList = " + bookList);
+
+        StringBuilder book = fileRead("D:/pg2009.txt");
+
+        System.out.println(commonThreeWords(book));
 
     }
 
-    static Map commonThreeWords(StringBuilder str){
+    static Map commonThreeWords(StringBuilder s) {
+
         ArrayList<String> sequences = new ArrayList<>();
-        String inputString = str.toString();
-        // Removing punctuation
+
+        String inputString = s.toString();
+
         String[] words = inputString.replaceAll("\\p{Punct}", "").toLowerCase().split("\\s+");
-        // Creating sequence of 3 words
-        for (int i = 3; i < words.length; i++) sequences.add(words[i-2]+" "+words[i-1]+" "+words[i]);
-        System.out.println("sequences.size() = " + sequences.size());
-        // Counting occurrence of each sequence in whole list
-        Map<String, Long> seqMap = sequences.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));
-        // Sorting and limiting by 100
-        List<Map.Entry<String, Long>> list = new LinkedList<>(seqMap.entrySet());
-        list.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()) == 0
-                ? o2.getKey().compareTo(o1.getKey())
-                : o2.getValue().compareTo(o1.getValue()));
+
+        for (int i = 2; i < words.length; i++) {
+            sequences.add(words[i - 2] + " " + words[i - 1] + " " + words[i]);
+        }
+        
+        Map<String, Long> map = new HashMap<>();
+
+        for (String sequence : sequences) {
+            if (map.containsKey(sequence)) {
+                map.put(sequence, map.get(sequence)+1);
+            } else {
+                map.put(sequence, 1L);
+            }
+        }
+
+        List<Map.Entry<String, Long>> list = new LinkedList<>(map.entrySet());
+        list.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()) == 0 ? o2.getKey().compareTo(o1.getKey()) : o2.getValue().compareTo(o1.getValue()));
         return list.stream().limit(100).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> b, LinkedHashMap::new));
     }
 
-    public List<String> removeRepededwords(List<String> list){
+    static StringBuilder fileRead(String filePath) {
 
-        for (String each : list) {
-            String[] words = each.split(" ");
-            String res = "";
-            for (String word : words) {
-                int f = Collections.frequency(Arrays.asList(words), word);
-                if (f==1) res+=word;
+        StringBuilder str = new StringBuilder();
+        BufferedReader br;
+
+        try {
+            br = new BufferedReader(new FileReader(filePath));
+            String line = br.readLine();
+            while (line != null) {
+                str.append(line);
+                str.append(System.lineSeparator());
+                line = br.readLine();
             }
-            each=res;
+            br.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        return list;
+        return str;
     }
+
 }
