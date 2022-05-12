@@ -8,6 +8,8 @@ public class ListCountOccurrences {
         List<String> list1 = new ArrayList<>(Arrays.asList("App,le", "a,,pple ", "12bat", "  14BAT", "", "car", "C A R ", "ap~!$#!#$ple", null));
         List<String> list2 = new ArrayList<>();
 
+
+
         System.out.println( solution(list1) );
         System.out.println( solution(list2) );
     }

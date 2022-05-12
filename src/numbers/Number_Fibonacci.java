@@ -23,8 +23,8 @@ import java.util.Arrays;
 
 public class Number_Fibonacci {
     public static void main(String[] args) {
-        int num = 12;
-        fibonacci(num);
+        int num = 10;
+       // fibonacci(num);
         System.out.println(Arrays.toString( fibonacciArray(num)) );
     }
 
