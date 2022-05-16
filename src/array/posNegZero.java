@@ -6,17 +6,17 @@ public class posNegZero {
             int[] a2 = {1,2,3,-5};
             int[] a3 = {1,2,0,-5};
 
-            System.out.println( solution(a3) );
+            System.out.println( solution(a2) );
         }
 
         public static int solution(int[] arr){
-            int sum=1;
+            int c=0;
             for (int each : arr) {
-                sum*=each;
+                if (each==0) return 0;
+                if (each<0) c++;
             }
-            if (sum==30) return 1;
-            if (sum==-30) return -1;
-            return 0;
+            if (c%2!=0) return -1;
+            return 1;
         }
     }
 
