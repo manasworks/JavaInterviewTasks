@@ -6,6 +6,8 @@ package list;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 
 public class List_RemoveNumbers {
     public static void main(String[] args) {
@@ -14,11 +16,20 @@ public class List_RemoveNumbers {
         removeGreater(list, 100);
         System.out.println(list);
 
+        System.out.println( removeDuplicates(list));
+
     }
 
     public static ArrayList<Integer> removeGreater(ArrayList<Integer> list, int num){
         // Easy just removing any greater than num with removeIf method
         list.removeIf(p-> p>num);
         return list;
+    }
+
+    static List<Integer> removeDuplicates(List<Integer> list){
+        List<Integer> listWithoutDuplicates = new ArrayList<>(new HashSet<>(list));
+        return listWithoutDuplicates;
+
+
     }
 }
