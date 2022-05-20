@@ -2,7 +2,7 @@ package string;
 
 public class String_Palindrome_replace {
     public static void main(String[] args) {
-        String s = "??dfsdfsdfs???Fsdfsd?SDFS????";
+        String s = "????";
 
         System.out.println(solution(s));
     }

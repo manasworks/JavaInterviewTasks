@@ -5,6 +5,13 @@ public class test2222 {
         int n=528;
 
         System.out.println( reverseNum(n));
+
+
+        String name = "is vowel";
+        name = name.toLowerCase().replaceAll("[^aeiou]", "");
+        boolean result = name.length()!=0;
+
+        System.out.println(result);
     }
 
     static int reverseNum(int n){
