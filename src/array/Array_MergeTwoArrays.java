@@ -9,6 +9,9 @@ public class Array_MergeTwoArrays {
         int[] arr1 = {1,2,3,4,5};
         int[] arr2 = {6,7,8,9,9,10};
 
+        Arrays.sort(arr2);
+        int max= arr2[args.length];
+
         System.out.println(Arrays.toString(merge(arr1, arr2)));
         System.out.println(Arrays.toString(merge2(arr1, arr2)));
 
