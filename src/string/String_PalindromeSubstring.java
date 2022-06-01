@@ -4,11 +4,13 @@ import java.util.*;
 
 public class String_PalindromeSubstring {
     public static void main(String[] args) {
-        String s1 = "hellosannasmith";
-        String s2 = "ancdefgg";
 
-        System.out.println("Longest palindrome: " + PalindromeSubstring(s1));
-        System.out.println("Longest palindrome: " + PalindromeSubstring(s2));
+        String[] str = {"levvel", "rdacecar", "letter", "levtrel", "anncda", "ancdefgg", "hellosannasmith"};
+
+        for (String each : str) {
+            System.out.println(each + "-: " + PalindromeSubstring(each));
+            System.out.println(each + "+: " +  longestPalindrome(each));
+        }
     }
 
     public static String PalindromeSubstring(String str) {
@@ -31,10 +33,20 @@ public class String_PalindromeSubstring {
     }
 
     public static boolean isPalindrome(String s) {
-        StringBuilder reverse = new StringBuilder(s);
-        reverse.reverse();
-        return s.equals(reverse.toString());
+        return s.equals(new StringBuilder(s).reverse().toString());
     }
 
+    public static String longestPalindrome(String str) {
+        String result = "";
+        String s = "";
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j < str.length(); j++) {
+                s = str.substring(i, j);
+                if (isPalindrome(s)) if (s.length() > result.length()) result = s;
+            }
+        }
+        if (result.length() <= 2) return "none";
+        return result;
+    }
 
 }

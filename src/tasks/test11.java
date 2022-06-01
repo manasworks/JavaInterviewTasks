@@ -1,5 +1,8 @@
 package tasks;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class test11 {
 
     int res=0;
@@ -11,6 +14,8 @@ public class test11 {
         test11 result;
         result = new test11(5,5);
         System.out.println(result.res);
+
+
 
 
 

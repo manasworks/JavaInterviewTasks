@@ -23,7 +23,7 @@ public class Array_SortInDescendingOrder {
         for (int i = 0; i < arr.length; i++) { // First loop
 
             for (int j = i+1; j < arr.length; j++) { // Inner loop to check value from first with the rest
-                if (arr[i] < arr[j]) { // Check if my number from outer loop is smaller than next from inner
+                if (arr[i] > arr[j]) { // Check if my number from outer loop is smaller than next from inner
                     int temp = arr[i]; // If yes assign that number to temp
                     arr[i] = arr[j]; // If yes my left num becomes bigger number from the right
                     arr[j] = temp; // If yes my right num becomes what we stored
