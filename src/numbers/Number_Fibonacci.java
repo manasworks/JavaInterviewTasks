@@ -19,13 +19,23 @@ Output : 21
  */
 package numbers;
 
+import tasks.Fibo;
+
 import java.util.Arrays;
+
+
 
 public class Number_Fibonacci {
     public static void main(String[] args) {
         int num = 10;
        // fibonacci(num);
+
+        Fibo fibo = new Fibo(10);
+        System.out.println(Arrays.toString(fibo.fibonacciArray()));
+
+        fibonacci(num);
         System.out.println(Arrays.toString( fibonacciArray(num)) );
+
     }
 
     public static void fibonacci(int num){
@@ -54,4 +64,7 @@ public class Number_Fibonacci {
 
         return fibArray;
     }
+
+
+
 }

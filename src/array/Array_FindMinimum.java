@@ -1,16 +1,49 @@
 package array;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Array_FindMinimum {
     public static void main(String[] args) {
 
-        int[] arr = {0,5,6,9,7,2,-5,2,2,-99,22,0};
+        int[] arr = {1,2,3,4,5,6};
 
         System.out.println(findMin(arr));
         System.out.println(findMin2(arr));
 
+        System.out.println( duplicate( arr ));
+        System.out.println( solution3( arr ));
     }
+
+    public static boolean solution3(int[] arr){
+        int c=1;
+        for (int i = 1; i < arr.length ; i++) if (arr[i-1]+1==arr[i]) c++;
+        return c==arr.length;
+    }
+
+    public static int duplicate(int[] a){
+        Set<Integer> set = new HashSet<>();
+        for(int i=0;i<a.length;i++){
+            if(!set.add(a[i])) {
+                return a[i];
+            }
+        }
+        return -1; // no duplicates found
+    }
+    // Find first duplicate with one loop
+    public static int firstDuplicate(int[] a){
+        Set<Integer> set = new HashSet<>();
+        for(int i=0;i<a.length;i++){
+            if(set.contains(a[i])) {
+                return a[i];
+            } else {
+                set.add(a[i]);
+            }
+        }
+        return -1; // no duplicates found
+    }
+
 
     public static int findMin(int[] arr){
         // To find minimum number from an Array. Firstly we need a new Variable to store our Min

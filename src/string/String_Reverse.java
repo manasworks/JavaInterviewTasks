@@ -3,11 +3,15 @@ package string;
 
 public class String_Reverse {
     public static void main(String[] args) {
-        String str = "String_Reverse";
+        long startTime = System.currentTimeMillis();
+        String str = "SDSDFSD";
         System.out.println(reverse1(str));
         System.out.println(reverse2(str));
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime);
     }
 
+    // Reverse string faster and memory optimized
     static String reverse1(String str){
         char[] arr = str.toCharArray();
         for (int i = 0; i < arr.length/2; i++) {

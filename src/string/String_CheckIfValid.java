@@ -1,6 +1,7 @@
 package string;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -8,6 +9,7 @@ import java.util.Stack;
 public class String_CheckIfValid {
     public static void main(String[] args) {
         String str = "[aa{(sdsd)aa}";  // [{()}], [(){}], (]})
+
 
         System.out.println( stringValidation(str) );
         System.out.println( isValid(str));

@@ -3,7 +3,7 @@ package tasks;
 import java.util.HashMap;
 import java.util.Map;
 
-public class safdsd {
+public class FloQast {
     public static void main(String[] args) {
         String[] logs = {
                 "A:1",

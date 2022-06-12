@@ -26,4 +26,13 @@ public class test2222 {
         return num;
 
     }
+
+    // Check if array of integers is sequential
+    public static boolean checkIfArrayInSequence(int[] arr){
+        int c=1;
+        for (int i = 1; i < arr.length ; i++) {
+            if (arr[i-1]+1==arr[i]) c++;
+        }
+        return c==arr.length;
+    }
 }

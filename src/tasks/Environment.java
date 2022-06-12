@@ -1,6 +1,6 @@
 package tasks;
 
-public class Task4 {
+public class Environment {
     public static void main(String[] args) {
 
         String env = "dev integrate";

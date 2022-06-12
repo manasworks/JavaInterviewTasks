@@ -3,7 +3,6 @@ package tasks;
 public class Hulya1 {
     public static void main(String[] args) {
         int[] arr = {1,-2,-3,5};
-
         System.out.println( solution(arr) );
     }
 
