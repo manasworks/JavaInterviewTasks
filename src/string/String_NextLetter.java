@@ -2,7 +2,7 @@ package string;
 
 public class String_NextLetter {
     public static void main(String[] args) {
-        String str = "£7eBmyuyu666";
+        String str = "£7eBm";
         System.out.println(str);
         System.out.println(nextLetter(str));
     }
@@ -34,4 +34,9 @@ and finally return this modified string. The string will not be empty and not in
 Examples
 Input    Output
 £7eBm    £7gDO
+ */
+
+/*
+size array even
+1,2,3,4
  */
